@@ -1,0 +1,102 @@
+import numpy as np
+import pandas as pd
+
+class UDVTQuantumInfo:
+    """
+    Unified Dynamic Vacuum Theory (UDVT) - Quantum Information Module
+    Author: Myo Sett Naing (ORCID: 0009-0002-9133-0058)
+    Version: 3.0
+    """
+    def __init__(self, beta=0.0038):
+        # Physical Constants
+        self.beta = beta
+        self.M_pl = 1.22e19          # Planck mass in GeV
+        self.c = 3e8                 # Speed of light in m/s
+        self.hbar = 1.0546e-34       # Reduced Planck constant in J.s
+        self.G = 6.674e-11           # Gravitational constant
+        self.k_B = 1.3806e-23        # Boltzmann constant
+        self.eV_to_J = 1.602e-19     # Energy conversion factor
+
+    def get_holevo_capacity(self, energy_gev=1.0, delta_t=1e-43):
+        """
+        Computes Holevo Capacity (chi). 
+        Equation: chi = (2 * E * dt) / (pi * hbar * ln(2))
+        """
+        energy_j = energy_gev * 1e9 * self.eV_to_J
+        chi = (2 * energy_j * delta_t) / (np.pi * self.hbar)
+        return chi / np.log(2)
+
+    def get_entanglement_entropy(self, area_m2=1.0):
+        """
+        Computes UDVT Entanglement Entropy Bound.
+        Equation: S = (2 * pi / 3) * (c^3 / (hbar * G)) * beta * Area
+        """
+        coeff = (2 * np.pi / 3) * (self.c**3 / (self.hbar * self.G)) * self.beta
+        return coeff * area_m2
+
+    def get_decoherence_rate(self, mass_gev, interaction_rate=1e-3):
+        """
+        Computes Decoherence Time (tau).
+        Equation: tau = hbar / (beta * (m / M_pl) * Gamma)
+        """
+        gamma_interaction = interaction_rate
+        tau = self.hbar / (self.beta * (mass_gev / self.M_pl) * gamma_interaction)
+        return tau
+
+    def get_circuit_complexity(self, mass_gev):
+        """
+        Computes Quantum Circuit Complexity (C).
+        Equation: C = E / (hbar * nu_update) where nu_update = beta * M_pl * c^2 / hbar
+        """
+        nu_update = (self.beta * self.M_pl * 1e9 * self.eV_to_J * self.c**2) / self.hbar
+        energy_j = mass_gev * 1e9 * self.eV_to_J
+        return energy_j / (self.hbar * nu_update)
+
+    def get_holographic_bound_ratio(self):
+        """
+        Computes the ratio between UDVT bound and Bekenstein-Hawking bound (S_udvt / S_bh).
+        Equation: Ratio = (8 / 3) * beta
+        """
+        return (8 / 3) * self.beta
+
+    def run_full_simulation(self):
+        """Aggregates all equations into a data report"""
+        # Testing with Muon mass (0.1057 GeV)
+        m_muon = 0.1057
+        
+        data = {
+            "Metric_Description": [
+                "Holevo Information Capacity",
+                "Entanglement Entropy Bound",
+                "Particle Decoherence Time",
+                "Quantum Circuit Complexity",
+                "UDVT/BH Holographic Ratio"
+            ],
+            "Mathematical_Formula": [
+                "chi = (2*E*dt)/(pi*hbar*ln2)",
+                "S = (2pi/3)*(c^3/hbarG)*beta*A",
+                "tau = hbar/(beta*(m/Mpl)*Gamma)",
+                "C = E/(hbar*nu_update)",
+                "Ratio = (8/3)*beta"
+            ],
+            "Computed_Value": [
+                self.get_holevo_capacity(),
+                self.get_entanglement_entropy(),
+                self.get_decoherence_rate(m_muon),
+                self.get_circuit_complexity(m_muon),
+                self.get_holographic_bound_ratio()
+            ],
+            "Unit": ["bits", "J/K", "seconds", "gates", "Dimensionless"]
+        }
+        return pd.DataFrame(data)
+
+    def export_results(self, filename="UDVT_Quantum_Equations_Report.xlsx"):
+        df = self.run_full_simulation()
+        df.to_excel(filename, index=False)
+        print(f"File exported: {filename}")
+
+if __name__ == "__main__":
+    qi_sim = UDVTQuantumInfo(beta=0.0038)
+    results = qi_sim.run_full_simulation()
+    print(results.to_string(index=False))
+    qi_sim.export_results()
