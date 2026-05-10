@@ -1,7 +1,10 @@
 Unified Dynamic Vacuum Theory (UDVT) v3.0
 Python 3.8+
+
 License MIT
+
 Author - Myo Sett Naing 
+
 ORCID  -0009-0002-9133-0058
 
 ## 🌌 Overview
