@@ -55,4 +55,4 @@ If you use this framework in your research, please cite the monograph:
 ## 🛡️ Security & Integrity
 Please refer to SECURITY.md for vulnerability reporting and theoretical consistency checks. UDVT is a falsifiable framework; experimental data from JWST, LISA, and PIXIE are actively used to refine the Myo Limit.
 **"The vacuum is not nothing; it is the fundamental processor of everything.
-"** — *Myo Sett Naing* -**"
+"** — *Myo Sett Naing* -"
