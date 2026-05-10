@@ -48,10 +48,11 @@ If you use this framework in your research, please cite the monograph:
   author = {Myo Sett Naing},
   title = {Unified Dynamic Vacuum Theory (UDVT) v3.0},
   year = {2026},
-  url = {https://github.com/myosettnaing1992-alt/Unified-Dynamic-Vacuum-Theory-},
+  url = {https://github.com/myosettnaing1992-alt/-udvt-},
   note = {ORCID: 0009-0002-9133-0058}
 }
 ```
 ## 🛡️ Security & Integrity
 Please refer to SECURITY.md for vulnerability reporting and theoretical consistency checks. UDVT is a falsifiable framework; experimental data from JWST, LISA, and PIXIE are actively used to refine the Myo Limit.
-**"The vacuum is not nothing; it is the fundamental processor of everything."** — *Myo Sett Naing*
+**"The vacuum is not nothing; it is the fundamental processor of everything.
+"** — *Myo Sett Naing* -**"
