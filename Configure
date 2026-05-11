@@ -1,0 +1,4 @@
+import config
+
+# Calculate Hubble with UDVT Beta
+effective_h0 = config.H0_REFERENCE * (1 + config.BETA) 
