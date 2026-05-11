@@ -8,10 +8,13 @@ ORCID    - 0009-0002-9133-0058
 
 
 [![CodeQL](https://github.com/myosettnaing1992-alt/-udvt-/actions/workflows/codeql.yml/badge.svg)](https://github.com/myosettnaing1992-alt/-udvt-/actions/workflows/codeql.yml)
+
 [![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌌 Overview
+
 The **Unified Dynamic Vacuum Theory (UDVT)** is a theoretical framework designed to resolve fundamental cosmological tensions, specifically the **Hubble ($H_0$) Tension** and the **$S_8$ Tension**. This suite provides the numerical tools required to simulate a universe where the speed of light ($c$) and vacuum energy density ($\rho_{vac}$) evolve dynamically over cosmic time.
 
 ### Key Theoretical Pillars:
@@ -25,7 +28,6 @@ The **Unified Dynamic Vacuum Theory (UDVT)** is a theoretical framework designed
 ### Prerequisites
 Ensure you have Python 3.11 or higher installed. The suite relies on the standard scientific Python stack:
 
-git clone 
 
 [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
 
@@ -34,7 +36,7 @@ engine = udvt.MasterEngine(beta=0.0038)
 
 # Calculate modified Hubble expansion at redshift z=2.0
 
-h_z = engine.udvt_h_ratio(z=2.0)
+h_z = engine.udvt_h_ratio (z=2.0)
 
 print(f"Modified Hubble Ratio at z=2: {h_z}")
 
