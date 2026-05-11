@@ -1,0 +1,56 @@
+name: UDVT Core CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  # Allows you to manually trigger the physics engine tests
+  workflow_dispatch:
+
+jobs:
+  test-and-verify:
+    name: Physics & Logic Verification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: 'pip'
+
+      - name: Install Physics Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy scipy matplotlib
+
+      - name: Run Myo-Limit Stability Tests
+        # This ensures BETA remains within the Margolus-Levitin bound (<= 0.01)
+        run: |
+          python -m unittest discover tests/
+
+  documentation:
+    name: Build Research Docs
+    needs: test-and-verify
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build Astro Dashboard
+        # This builds the visual representation of your H0/S8 tension solutions
+        run: |
+          npm ci
+          npm run build
+          
