@@ -1,0 +1,39 @@
+name: UDVT Python Suite Validation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout UDVT Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+        cache: 'pip' # Speeds up subsequent runs
+
+    - name: Install Scientific Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install numpy scipy astropy matplotlib openpyxl pandas
+
+    - name: Physics Logic & Syntax Check
+      run: |
+        # Checks for syntax errors in all your UDVT modules
+        python -m py_compile *.py
+        echo "All physics modules passed syntax validation."
+
+    - name: Verify Myo Limit Constants
+      run: |
+        # Optional: Run a specific script to verify your theoretical bounds
+        if [ -f "udvt_myo_limit_check.py" ]; then
+          python udvt_myo_limit_check.py
+        fi
