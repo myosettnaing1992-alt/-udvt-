@@ -100,7 +100,3 @@ For technical inquiries regarding the **Millennium Engine** or **VSL integration
   
 
 
-```bash
-pip install numpy scipy pandas astropy matplotlib openpyxl
-```bash
-pip install numpy scipy pandas astropy matplotlib openpyxl
