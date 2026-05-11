@@ -25,13 +25,17 @@ The **Unified Dynamic Vacuum Theory (UDVT)** is a theoretical framework designed
 ### Prerequisites
 Ensure you have Python 3.11 or higher installed. The suite relies on the standard scientific Python stack:
 
-git clone [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
+git clone 
+
+[https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
 
 # Initialize the engine (beta = 0.0038)
 engine = udvt.MasterEngine(beta=0.0038)
 
 # Calculate modified Hubble expansion at redshift z=2.0
+
 h_z = engine.udvt_h_ratio(z=2.0)
+
 print(f"Modified Hubble Ratio at z=2: {h_z}")
 
 ---
