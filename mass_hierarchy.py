@@ -1,7 +1,3 @@
-UDVT v2.0 - Fermion Mass Hierarchy from Winding Numbers
-Solves the self-consistent mass equation for generations N=1,2,3.
-"""
-
 import numpy as np
 from scipy.optimize import fsolve
 
@@ -48,4 +44,4 @@ if __name__ == "__main__":
     for N in [1,2,3]:
         m_pred = mass_from_winding_number(N)
         obs = observed[N]
-        print(f"  N={N}: predicted = {m_pred:.4f}, observed = {obs:.4f}, error = {abs(m_pred-obs)/obs*100:.1f}%")
+        print(f"  N={N}: predicted = {m_pred:.4f}, observed = {obs:.4f}, error = {abs(m_pred-obs)/obs*100:.1f %"}
