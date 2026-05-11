@@ -47,7 +47,7 @@ print(f"Modified Hubble Ratio at z=2: {h_z}")
 The **UDVT v3.0** suite utilizes a multi-layered approach to solve cosmological discrepancies through the lens of Variable Speed of Light (VSL) and information-theoretic bounds.
 
 ### 1. The Hubble ($H_0$) Tension Resolution
-Unlike the standard $\Lambda$CDM model, UDVT introduces a scaling factor for the speed of light:
+Unlike the standard $\Lambda$ CDM model, UDVT introduces a scaling factor for the speed of light:
 $$c(z) = c_0 (1+z)^\beta$$
 This modification affects the luminosity distance and the angular diameter distance, providing a smoother transition between Early-Universe (CMB) and Late-Universe (Supernovae) measurements.
 
