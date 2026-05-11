@@ -24,10 +24,13 @@ The **Unified Dynamic Vacuum Theory (UDVT)** is a theoretical framework designed
 
 ### Prerequisites
 Ensure you have Python 3.11 or higher installed. The suite relies on the standard scientific Python stack:
+
 ``bash
 pip install numpy scipy pandas astropy matplotlib openpyxl
 
 git clone [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
+
+
 cd -udvt-
 import udvt_master_engine as udvt
 
