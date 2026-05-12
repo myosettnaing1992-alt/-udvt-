@@ -1,8 +1,0 @@
-# documentation:
-
-  - README.md
-  - LICENSE
-python-logic:
-  - "*.py"
-tests:
-  - "tests/**/*"
