@@ -128,19 +128,23 @@ UDVT uses the following scaling laws for cosmological evolution:
 - **VSL Scaling:** $c(z) = c_0 (1+z)^\beta$
 - **Vacuum Density:** $\rho_{vac}(z) = \rho_{vac,0} (1+z)^{3\beta}$
 - **Myo Limit:** $\beta = 0.0038$
+
+
+
   
 ###  Quick Start
 
-# git
-### 📦 Prerequisites
-Before running the scripts, ensure you have the required libraries installed:
+### 3.2 Quick Start
 
-
-# '''bash
-git clone https://github.com/myosettnaing1992-alt/-udvt-.git
-
+-------
+`'`bash
+# Clone the repository
+git clone [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
 cd -udvt-
-  
+
+# Run analysis
+python comparison_report.py
+
 
 ## ⚖️ License
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
