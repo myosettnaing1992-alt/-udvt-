@@ -1,10 +1,29 @@
-UDVT/
-├── .github/workflows/udvt-ci.yml   # Automated Testing (CI)
-├── tests/
-│   └── test_udvt_core.py          # Theory Stability Tests
-├── core.py                        # VSL & Hubble Engines
-├── config.py                      # Universal Constants (Beta=0.0038)
-├── udvt_master_engine.py          # Main Simulation Suite
-├── README.md                      # Academic Overview
-├── LICENSE                        # MIT License
-└── CITATION.cff                   # Academic Citation Info
+UDVT-MetricAffine-Vacuum-Cosmology/
+│
+├── README.md
+├── LICENSE
+├── docs/
+│   ├── overview.md
+│   ├── theory_outline.md
+│   └── references.bib
+│
+├── src/
+│   ├── action_functional.tex
+│   ├── field_equations.tex
+│   ├── stability_analysis.tex
+│   └── cosmology_sector.tex
+│
+├── simulations/
+│   ├── cosmology_fit.ipynb
+│   ├── gw_constraints.ipynb
+│   └── perturbations.py
+│
+├── datasets/
+│   ├── planck2018_parameters.csv
+│   ├── gw170817_constraints.json
+│   └── hubble_tension_data.csv
+│
+└── tests/
+    ├── test_field_equations.py
+    ├── test_stability.py
+    └── test_cosmology.py
