@@ -133,14 +133,11 @@ UDVT uses the following scaling laws for cosmological evolution:
 
   
 ###  Quick Start
-
-
 -------
 ```bash
 # Clone the repository
 git clone [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
 cd -udvt-
-
 # Run analysis
 python comparison_report.py
 
