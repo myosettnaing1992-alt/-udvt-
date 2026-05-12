@@ -86,7 +86,7 @@ This repository includes a `security.md` policy. All physics solvers are protect
 ---
 ## 📊 Theoretical Framework & Core Solutions
 The **UDVT framework** provides a superior fit to observational data compared to the standard **ΛCDM** model by resolving the two most significant crises in modern cosmology: the **Hubble ($H_0$) Tension** and the **$S_8$ Tension**.
-### 1.1 Model Comparison Matrix
+### Model Comparison Matrix
 
 | Feature | Standard ΛCDM | **UDVT (This Suite)** | Statistical Benefit |
 | :--- | :--- | :--- | :--- |
@@ -95,14 +95,14 @@ The **UDVT framework** provides a superior fit to observational data compared to
 | **Hubble Constant ($H_0$)** | ~ 67.4 km/s/Mpc | **~ 73.2 km/s/Mpc** | **Eliminates $H_0$ Tension** |
 | **Structure Growth ($S_8$)** | ~ 0.832 | **~ 0.785** | **Eliminates $S_8$ Tension** |
 
-### 1.2 The Myo Limit ($\beta$) Scaling
+###  The Myo Limit ($\beta$) Scaling
 At the heart of UDVT is the **Myo Limit ($\beta = 0.0038$)**, which governs the dynamic scaling of physical constants:
 1. **Cosmological Scaling:** $c(z) = c_0 (1+z)^\beta$
 2. **Vacuum Suppression:** Structure growth is regulated by the suppression factor $e^{-\beta z}$ to align with Weak Lensing observations.
 ---
 ## 📈 Numerical Results & Data Agreement
 This section presents the statistical agreement between **UDVT predictions** and **Planck 2018** observational data.
-### 2.1 CMB Power Spectrum Validation (Multipole $\ell$)
+### CMB Power Spectrum Validation (Multipole $\ell$)
 
 | Multipole ($\ell$) | Planck 2018 Data | ΛCDM Prediction | **UDVT Prediction** | **Status** |
 | :--- | :--- | :--- | :--- | :--- |
@@ -111,19 +111,20 @@ This section presents the statistical agreement between **UDVT predictions** and
 | 800 (3rd Peak) | 1800.4 | 1820.1 | **1805.2** | ✅ Aligned |
 | 2000 (Damping) | 150.3 | 165.2 | **155.8** | ✅ Improved |
 
-### 2.2 Statistical Improvement
+###  Statistical Improvement
 * **Goodness-of-Fit:** UDVT shows a **~45% reduction** in $\chi^2$ (Chi-squared) values for low-$\ell$ anomalies.
 * **$H_0$ Convergence:** While ΛCDM diverges from local measurements (SH0ES), UDVT converges at **$73.2 \pm 0.4$ km/s/Mpc**.
 ---
 ## 🛠️ Computational Architecture & Usage
 The UDVT suite is modularized to allow independent verification of its mathematical foundations.
-### 3.1 Project Structure
+### Project Structure
 * **`mathematical.py`**: Core mathematical invariants and the Myo Limit scaling.
 * **`cosmo.py`**: Cosmological evolution solver (Hubble parameter and distance measures).
 * **`all_math_solutions.py`**: A comprehensive engine for solving VSL, Mass Hierarchy, and Vacuum Density.
 * **`comparison_report.py`**: Automated statistical comparison between UDVT and ΛCDM.
 ### 3.2 Quick Start
-```bash
+
+'''bash
 
  # Clone the repository
 git clone
