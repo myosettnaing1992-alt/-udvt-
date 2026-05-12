@@ -122,7 +122,14 @@ The UDVT suite is modularized to allow independent verification of its mathemati
 * **`cosmo.py`**: Cosmological evolution solver (Hubble parameter and distance measures).
 * **`all_math_solutions.py`**: A comprehensive engine for solving VSL, Mass Hierarchy, and Vacuum Density.
 * **`comparison_report.py`**: Automated statistical comparison between UDVT and ΛCDM.
-### 3.2 Quick Start
+
+## 📐 Mathematical Core
+UDVT uses the following scaling laws for cosmological evolution:
+- **VSL Scaling:** $c(z) = c_0 (1+z)^\beta$
+- **Vacuum Density:** $\rho_{vac}(z) = \rho_{vac,0} (1+z)^{3\beta}$
+- **Myo Limit:** $\beta = 0.0038$
+- 
+###  Quick Start
 
 '''bash
 
