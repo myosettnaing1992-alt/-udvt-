@@ -23,7 +23,7 @@ class TestUDVTCore(unittest.TestCase):
         Exceeding this causes a breakdown in vacuum information stability.
         """
         self.assertLessEqual(self.engine.beta, 0.01, 
-                            f"Safety Violation: Beta {self.engine.beta} exceeds 0.01!")
+   f"Safety Violation: Beta {self.engine.beta} exceeds 0.01!")
 
     def test_vsl_logic(self):
         """
