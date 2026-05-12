@@ -1,8 +1,9 @@
 # Unified Dynamic Vacuum Theory (UDVT) v3.0
 **A Computational Suite for Variable Speed of Light (VSL) and Vacuum Density Evolution**
-
+---
 
 Author   - Myo Sett Naing 
+---
 
 ORCID    - 0009-0002-9133-0058
 
@@ -16,7 +17,7 @@ ORCID    - 0009-0002-9133-0058
 ## 🌌 Overview
 
 The **Unified Dynamic Vacuum Theory (UDVT)** is a theoretical framework designed to resolve fundamental cosmological tensions, specifically the **Hubble ($H_0$) Tension** and the **$S_8$ Tension**. This suite provides the numerical tools required to simulate a universe where the speed of light ($c$) and vacuum energy density ($\rho_{vac}$) evolve dynamically over cosmic time.
-
+---
 ### Key Theoretical Pillars:
 * **Variable Speed of Light (VSL):** Defined by the scaling relation $c(a) = c_0 a^{-\beta}$.
 * **The Myo Limit:** A stability constraint where $\beta \leq 0.01$ ensures consistency with local physical laws and the Margolus-Levitin bound.
