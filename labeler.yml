@@ -1,0 +1,8 @@
+# configuration file for actions/labeler
+
+documentation:
+  - README.md
+python-code:
+  - "*.py"
+tests:
+  - "tests/**/*"

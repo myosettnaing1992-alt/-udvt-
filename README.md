@@ -1,8 +1,9 @@
 # Unified Dynamic Vacuum Theory (UDVT) v3.0
 **A Computational Suite for Variable Speed of Light (VSL) and Vacuum Density Evolution**
-
+---
 
 Author   - Myo Sett Naing 
+---
 
 ORCID    - 0009-0002-9133-0058
 
@@ -14,9 +15,8 @@ ORCID    - 0009-0002-9133-0058
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌌 Overview
-
 The **Unified Dynamic Vacuum Theory (UDVT)** is a theoretical framework designed to resolve fundamental cosmological tensions, specifically the **Hubble ($H_0$) Tension** and the **$S_8$ Tension**. This suite provides the numerical tools required to simulate a universe where the speed of light ($c$) and vacuum energy density ($\rho_{vac}$) evolve dynamically over cosmic time.
-
+---
 ### Key Theoretical Pillars:
 * **Variable Speed of Light (VSL):** Defined by the scaling relation $c(a) = c_0 a^{-\beta}$.
 * **The Myo Limit:** A stability constraint where $\beta \leq 0.01$ ensures consistency with local physical laws and the Margolus-Levitin bound.
@@ -129,22 +129,6 @@ UDVT uses the following scaling laws for cosmological evolution:
 - **Vacuum Density:** $\rho_{vac}(z) = \rho_{vac,0} (1+z)^{3\beta}$
 - **Myo Limit:** $\beta = 0.0038$
 
-
-
-  
-###  Quick Start
-
-
--------
-‘’‘bash
-# Clone the repository
-git clone [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
-cd -udvt-
-
-# Run analysis
-python comparison_report.py
-
-
 ## ⚖️ License
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
@@ -156,6 +140,13 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 **GitHub:** [@myosettnaing1992-alt](https://github.com/myosettnaing1992-alt)
 
 For technical inquiries regarding the **Millennium Engine** or **VSL integration**, please open an issue in the repository or contact the author directly.
+
+
+
+----
+
+
+
 
   
 

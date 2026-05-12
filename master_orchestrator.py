@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
-from scipy.integrate import quad
+from scipy.integrate 
+import quad
 from astropy.cosmology import Planck18
 import astropy.units as u
 
