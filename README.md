@@ -15,7 +15,6 @@ ORCID    - 0009-0002-9133-0058
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## 🌌 Overview
-
 The **Unified Dynamic Vacuum Theory (UDVT)** is a theoretical framework designed to resolve fundamental cosmological tensions, specifically the **Hubble ($H_0$) Tension** and the **$S_8$ Tension**. This suite provides the numerical tools required to simulate a universe where the speed of light ($c$) and vacuum energy density ($\rho_{vac}$) evolve dynamically over cosmic time.
 ---
 ### Key Theoretical Pillars:
