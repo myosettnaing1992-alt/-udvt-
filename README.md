@@ -141,14 +141,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 For technical inquiries regarding the **Millennium Engine** or **VSL integration**, please open an issue in the repository or contact the author directly.
 
-### Quick Start
-```bash
-# Clone the repository
-git clone [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
-cd -udvt-
-
-# Run analysis
-python comparison_report.py
 
 
 ----
