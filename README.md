@@ -137,12 +137,8 @@ Before running the scripts, ensure you have the required libraries installed:
 
 
 # '''bash
-
-pip install numpy pandas scipy matplotlib
-
- # Clone the reporepository 
-Git copy
-  # -udvt-://github.com/myosettnaing1992-alt/-udvt-
+git clone https://github.com/myosettnaing1992-alt/-udvt-.git
+cd -udvt-
   
 
 ## ⚖️ License
