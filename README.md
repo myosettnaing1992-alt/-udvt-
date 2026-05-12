@@ -136,7 +136,7 @@ UDVT uses the following scaling laws for cosmological evolution:
 
 
 -------
-‘’‘bash
+```bash
 # Clone the repository
 git clone [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
 cd -udvt-
