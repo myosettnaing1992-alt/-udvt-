@@ -1,7 +1,9 @@
 # import unittest
 import numpy as np
 # Ensure these modules are in your PYTHONPATH
-from udvt_myo_limit import MyoLimitCheck
+from udvt_myo_limit 
+
+# import MyoLimitCheck
 from core import UDVT_Core_Cosmology as UDVT_Engine
 
 class TestUDVTCore(unittest.TestCase):
