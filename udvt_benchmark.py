@@ -1,9 +1,6 @@
 import numpy as np
 import Planck18 as cosmo
-import udvt_engine as udvt 
-
-# Importing your core engine
-
+import udvt_engine as udvt
 def run_validation_test(beta=0.0038):
     """
     Compares the UDVT expansion history against the Standard LCDM (Planck 2018).
