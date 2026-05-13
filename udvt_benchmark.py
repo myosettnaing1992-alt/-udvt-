@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from astropy.cosmology 
-
 import Planck18 as cosmo
 import udvt_engine as udvt 
 
