@@ -1,0 +1,27 @@
+name: UDVT Core Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-physics:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Scientific Stack
+        run: |
+          pip install numpy scipy matplotlib sympy
+
+      - name: Run UDVT Field Equations Test
+        run: python tests/test_field_evolution.py
+        
