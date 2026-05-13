@@ -1,7 +1,0 @@
-# GitHub Labeler Configuration
-documentation:
-  - README.md
-python-code:
-  - "*.py"
-tests:
-  - "tests/**/*"
