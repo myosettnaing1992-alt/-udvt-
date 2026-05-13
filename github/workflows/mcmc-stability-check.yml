@@ -1,0 +1,17 @@
+name: MCMC Stability Check
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'
+    # run every Sunday weekly
+jobs:
+  stability:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+      
+      - name: Run Convergence Diagnostics
+        run: |
+          python scripts/check_convergence.py --gelman-rubin 1.05
+          
