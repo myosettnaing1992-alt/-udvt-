@@ -74,7 +74,9 @@ The repository is optimized for high-level research data flow:
 ## 📜 Citation & Research Reference
 If you use this suite or the **Unified Dynamic Vacuum Theory** in your research, please cite the following work:
 
-* **Naing, M. S.** (2026). *Unified Dynamic Vacuum Theory: A Computational Framework for VSL Cosmology*.
+* **Naing, M. S.** (2026). **A Computational Suite for Variable Speed of Light (VSL) and Vacuum Density Evolution**
+* 
+---
   
 * **UDVT v3.0 Software Suite**: [https://github.com/myosettnaing1992-alt/-udvt-](https://github.com/myosettnaing1992-alt/-udvt-)
 
@@ -102,6 +104,7 @@ At the heart of UDVT is the **Myo Limit ($\beta = 0.0038$)**, which governs the 
 ---
 ## 📈 Numerical Results & Data Agreement
 This section presents the statistical agreement between **UDVT predictions** and **Planck 2018** observational data.
+
 ### CMB Power Spectrum Validation (Multipole $\ell$)
 
 | Multipole ($\ell$) | Planck 2018 Data | ΛCDM Prediction | **UDVT Prediction** | **Status** |
