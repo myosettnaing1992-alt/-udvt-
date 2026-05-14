@@ -75,7 +75,7 @@ The repository is optimized for high-level research data flow:
 If you use this suite or the **Unified Dynamic Vacuum Theory** in your research, please cite the following work:
 
 * **Naing, M. S.** (2026). **A Computational Suite for Variable Speed of Light (VSL) and Vacuum Density Evolution**
-* 
+  
 ---
   
 * **UDVT v3.0 Software Suite**: [https://github.com/myosettnaing1992-alt/-udvt-](https://github.com/myosettnaing1992-alt/-udvt-)
