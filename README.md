@@ -10,6 +10,8 @@ ORCID    - 0009-0002-9133-0058
 
 [![CodeQL](https://github.com/myosettnaing1992-alt/-udvt-/actions/workflows/codeql.yml/badge.svg)](https://github.com/myosettnaing1992-alt/-udvt-/actions/workflows/codeql.yml)
 
+[![Manual workflow](https://github.com/myosettnaing1992-alt/-udvt-/actions/workflows/manual.yml/badge.svg)](https://github.com/myosettnaing1992-alt/-udvt-/actions/workflows/manual.yml)
+
 [![Python Version](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
