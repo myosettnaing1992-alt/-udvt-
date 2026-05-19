@@ -31,8 +31,8 @@ Ensure you have Python 3.11 or higher installed. The suite relies on the standar
 
 [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
 
-# Initialize the engine ($beta = 0.0038$)
-engine = udvt.MasterEngine($beta=0.0038$)
+# Initialize the engine (beta = 0.0038)
+engine = udvt.MasterEngine(beta=0.0038)
 
 # Calculate modified Hubble expansion at redshift z=2.0
 
