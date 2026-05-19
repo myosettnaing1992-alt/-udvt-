@@ -31,8 +31,8 @@ Ensure you have Python 3.11 or higher installed. The suite relies on the standar
 
 [https://github.com/myosettnaing1992-alt/-udvt-.git](https://github.com/myosettnaing1992-alt/-udvt-.git)
 
-# Initialize the engine (beta = 0.0038)
-engine = udvt.MasterEngine(beta=0.0038)
+# Initialize the engine ($beta = 0.0038$)
+engine = udvt.MasterEngine($beta=0.0038$)
 
 # Calculate modified Hubble expansion at redshift z=2.0
 
@@ -88,6 +88,7 @@ This repository includes a `security.md` policy. All physics solvers are protect
 ---
 ## 📊 Theoretical Framework & Core Solutions
 The **UDVT framework** provides a superior fit to observational data compared to the standard **ΛCDM** model by resolving the two most significant crises in modern cosmology: the **Hubble ($H_0$) Tension** and the **$S_8$ Tension**.
+
 ### Model Comparison Matrix
 
 | Feature | Standard ΛCDM | **UDVT (This Suite)** | Statistical Benefit |
