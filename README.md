@@ -72,6 +72,23 @@ The repository is optimized for high-level research data flow:
 * **Visualizer**: Automated plotting tools in `udvt_visualizer.py` generate publication-ready, LaTeX-formatted graphs for scientific papers.
 
 ---
+# UDVT Quantum Framework & Information Theory
+**Integrating the Myo Limit with Quantum Information Bounds**
+
+##  1. The Myo Limit and Information Density
+The **Myo Limit** ($\beta \leq 0.01$) is not just a cosmological constraint; it is rooted in the **Margolus-Levitin theorem**, which sets a fundamental limit on the maximum speed of computation (information processing) in a quantum system.
+
+$$\Delta t \geq \frac{h}{4E}$$
+
+In the UDVT framework, as the speed of light $c(z)$ increases in the early universe, the available energy states and the rate of information transfer between quantum vacuum fluctuations are modified.
+
+## 2. Vacuum State Oscillations
+The suite includes the `udvt_quantum_solver.py` module to simulate the behavior of the vacuum energy density at the Planck scale. 
+
+### Key Equations:
+* **Modified Planck Constant:** While $h$ remains a fundamental constant, the effective interaction scale is influenced by the variable light speed $c(z)$, leading to a "dynamic" Planck Length:
+  $$\ell_P(z) = \sqrt{\frac{\hbar G}{c(z)^3}}$$
+  
 
 ## 📜 Citation & Research Reference
 If you use this suite or the **Unified Dynamic Vacuum Theory** in your research, please cite the following work:
