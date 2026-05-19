@@ -38,7 +38,7 @@ engine = udvt.MasterEngine(beta=0.0038)
 
 # Calculate modified Hubble expansion at redshift z=2.0
 
-h_z = engine.udvt_h_ratio (z=2.0)
+h_z = engine.udvt_h_ratio (z = 2.0)
 
 print(f"Modified Hubble Ratio at z=2: {h_z}")
 
