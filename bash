@@ -15,3 +15,5 @@ Current Beta: 0.0038
 Success: Data exported to UDVT_Simulation_v3_Results.xlsx
 Generating Visual Summary (UDVT_Visual_Summary.png)...
 Done.
+
+pip install numpy scipy matplotlib
