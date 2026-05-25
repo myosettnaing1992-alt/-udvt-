@@ -1,20 +1,63 @@
-# Contributing to UDVT Suite
+# Contributing to the UDVT Suite
 
-Thank you for your interest in the Unified Dynamic Vacuum Theory (UDVT) project. We welcome contributions from physicists, researchers, and software developers.
+Thank you for your interest in contributing to the Unified Dynamic Vacuum Theory (UDVT) project. This document explains how to report problems, propose changes, and submit code, documentation, or data so your contribution can be reviewed and merged smoothly.
 
-## How to Contribute
+## 1. Our values and expectations
+- Be constructive and respectful.
+- Aim for reproducibility and rigor.
+- Cite sources for theoretical material.
+- By contributing you agree to license your contributions under the MIT License.
 
-### 1. Reporting Bugs
-If you find inconsistencies in the cosmological scaling or errors in the Python implementation, please open an **Issue** on GitHub.
+## 2. Before you start
+- Read README, monographs, CITATION.cff, and glossary.
+- Check open issues; open a new issue if none exists.
+- Fork and create a branch: `feat/<desc>`, `fix/<desc>`, `docs/<desc>`.
 
-### 2. Code Contributions
-- Fork the repository.
-- Create a new branch for your feature or fix.
-- Ensure your code follows the mathematical rigor of UDVT.
-- Submit a **Pull Request** (PR) for review.
+## 3. Reporting bugs and requesting features
+- Open an issue with environment, steps to reproduce, expected vs actual behavior, logs, and minimal code.
 
-### 3. Academic Integrity
-When contributing to theoretical derivations, please ensure all references to the Myo Limit and vacuum energy scaling are properly cited within the documentation.
+## 4. Code contributions (PR workflow)
+1. Branch from `main`.
+2. Write tests (pytest).
+3. Follow style: Python 3.10+, use `black`, `flake8`.
+4. Docstrings: NumPy or Google style.
+5. Type hints for public APIs.
+6. Add/update docs in `docs/`.
+7. Run tests locally.
+8. Commit messages: imperative style.
+9. Open PR with description, linked issues.
+10. Respond to review comments.
 
-## License
-By contributing, you agree that your contributions will be licensed under the **MIT License**.
+## 5. Tests, CI, and reproducibility
+- Unit tests for deterministic logic.
+- Integration tests with fixed seeds and tolerances.
+- Large datasets: do not commit; provide links.
+
+## 6. Documentation and examples
+- Keep docstrings up to date.
+- Jupyter notebooks allowed for demos; keep small.
+
+## 7. Data, figures, and external resources
+- Provide provenance and license for datasets.
+- Prefer scripts to regenerate figures.
+
+## 8. Theoretical contributions and derivations
+- State assumptions, definitions, and notation.
+- Cite monograph sections and external literature.
+- Include scripts reproducing numerical predictions.
+
+## 9. Code of conduct
+- Follow CODE_OF_CONDUCT.md.
+- Contact maintainers for disputes.
+
+## 10. Security and sensitive information
+- Do not commit secrets.
+- Responsible disclosure via maintainer email.
+
+## 11. Templates
+- Issue template and PR checklist included in repo.
+
+## 12. Contact
+- See CITATION.cff for maintainer contact.
+
+Thank you for contributing.
