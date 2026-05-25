@@ -1,14 +1,50 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
+
 authors:
-- family-names: "Lisa"
-  given-names: "Mona"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
-- family-names: "Bot"
-  given-names: "Hew"
-  orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: "Lisa"
+    given-names: "Mona"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "Institute of Computational Physics"
+  - family-names: "Bot"
+    given-names: "Hew"
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "Department of Applied Mathematics"
+
 title: "My Research Software"
 version: 2.0.4
 doi: 10.5281/zenodo.1234
 date-released: 2017-12-18
 url: "https://github.com/github-linguist/linguist"
+
+repository-code: "https://github.com/github-linguist/linguist"
+license: "MIT"
+
+keywords:
+  - "cosmology"
+  - "vacuum theory"
+  - "simulation"
+  - "python"
+
+references:
+  - type: "article"
+    title: "Unified Dynamic Vacuum Theory"
+    authors:
+      - family-names: "Naing"
+        given-names: "Myo Sett"
+    year: 2026
+    doi: "10.5281/zenodo.98765"
+    journal: "Journal of Theoretical Physics"
+  - type: "book"
+    title: "Metric-Affine Geometry and Vacuum Physics"
+    authors:
+      - family-names: "Hehl"
+        given-names: "Friedrich"
+    year: 1995
+    publisher: "Springer"
+
+contact:
+  name: "Project Maintainer"
+  email: "maintainer@example.com"
+
+abstract: "This software provides simulation tools for Unified Dynamic Vacuum Theory (UDVT), including cosmological background solvers, variable speed of light models, and vacuum energy evolution."
