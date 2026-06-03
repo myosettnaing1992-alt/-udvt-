@@ -1,0 +1,166 @@
+*** Begin Patch
+*** Add File: source/udvt_background.c
++/* udvt_background.c -- helper functions for UDVT dynamic beta and c_effective */
++#include "background.h"
++#include <math.h>
++
++/* Default parameters (expose via input file if desired) */
++double udvt_beta_early = 0.0038;
++double udvt_beta_late  = 2.9e-33;
++double udvt_a_c        = 1e-3;
++double udvt_delta_a    = 3e-4;
++double udvt_c0         = 2.99792458e5; /* km/s in CLASS units */
++int    udvt_enable     = 0; /* 0: disabled (LCDM), 1: enabled */
++
++/* prototypes (declare in include/background.h) */
++double beta_effective(double a);
++double c_effective(double a);
++double gw_effective(double a, double gamma);
++
++double beta_effective(double a) {
++  double arg = (a - udvt_a_c) / udvt_delta_a;
++  double sigmoid = 1.0 / (1.0 + exp(arg));
++  return udvt_beta_late + (udvt_beta_early - udvt_beta_late) * sigmoid;
++}
++
++double c_effective(double a) {
++  if (!udvt_enable) return udvt_c0;
++  double b = beta_effective(a);
++  double loga = log(a > 0 ? a : 1e-30);
++  double a_pow = exp(-b * loga);
++  return udvt_c0 * a_pow;
++}
++
+*** Begin Patch
+*** Modify File: include/background.h
+@@
+ /* existing prototypes */
++/* UDVT prototypes */
++double beta_effective(double a);
++double c_effective(double a);
++double gw_effective(double a, double gamma);
+*** End Patch
+*** Begin Patch
+*** Modify File: source/background.c
+@@
+ /* inside init_background or equivalent initialization */
++/* UDVT: precompute c(a) and eta(a) tables for numerical stability */
++if (udvt_enable) {
++  int N_udvt_a = 5000;
++  double *udvt_a_grid = malloc(N_udvt_a * sizeof(double));
++  double *udvt_c_grid = malloc(N_udvt_a * sizeof(double));
++  for (int i = 0; i < N_udvt_a; ++i) {
++    double a = exp(log(1e-10) + (double)i/(N_udvt_a-1) * (log(1.0)-log(1e-10)));
++    udvt_a_grid[i] = a;
++    udvt_c_grid[i] = c_effective(a);
++  }
++  /* build spline: use CLASS spline utilities, store pointers in background struct */
++  background->udvt_a_grid = udvt_a_grid;
++  background->udvt_c_grid = udvt_c_grid;
++  background->N_udvt_a = N_udvt_a;
++}
+@@
+-/* original conformal time integrand: da/(a*a*H) */
++/* modified conformal time integrand when UDVT enabled: c(a) * da/(a*a*H) */
++double integrand = (udvt_enable ? c_effective(a) : c0) / (a*a*H_of_a);
++eta += integrand * da;
+*** End Patch
+*** Begin Patch
+*** Modify File: source/perturbations.c
+@@
+-    /* original streaming term */
+-    double streaming = k * ( (l+1)*Theta[l+1] - l*Theta[l-1] ) / (2*l+1);
++    /* UDVT: use effective light speed in streaming term */
++    double c_eff = (udvt_enable ? spline_eval(background->udvt_c_spline, a) : c0);
++    double streaming = k * c_eff * ( (l+1)*Theta[l+1] - l*Theta[l-1] ) / (2*l+1);
+@@
+-    /* matter growth equation unchanged */
++    /* matter growth equation with NMDC friction: add gamma_nmdc = beta(a)*H(a) */
++    double beta_udvt = (udvt_enable ? beta_effective(a) : 0.0);
++    double gamma_nmdc = beta_udvt * H_of_a;
++    /* implement: ddot_delta + (2H + gamma_nmdc) dot_delta - 4*pi*G*rho*delta = 0 */
++    /* ensure sign conventions match existing solver */
+*** End Patch
+*** Begin Patch
+*** Modify File: Makefile
+@@
+ # add udvt_background.c to CLASS build
++SRC += source/udvt_background.c
+*** End Patch
+*** Begin Patch
+*** Modify File: docs/parameters.ini.example
+@@
+ # UDVT parameters
++udvt.enable_dynamic_c = false
++udvt.beta_early = 0.0038
++udvt.beta_late = 2.9e-33
++udvt.a_c = 1e-3
++udvt.delta_a = 3e-4
++udvt.gamma_gw = 0.0
+*** End Patch
+*** Begin Patch
+*** Modify File: alterbbn/rate_eqs.c
+@@
++#include "udvt_background.h" /* header providing c_effective and gw_effective prototypes */
+@@
+ /* Wrapper for weak reaction rates with UDVT scaling */
+-double Gamma_weak_standard(double T);
++double Gamma_weak_standard(double T);
++
++double Gamma_weak_modified(double T, double a, double gamma_param) {
++    double Gamma_std = Gamma_weak_standard(T);
++    double c_eff = (udvt_enable ? c_effective(a) : c0);
++    double gw_ratio = (udvt_enable ? gw_effective(a, gamma_param) : 1.0);
++    int n_i = 3; /* reaction-dependent exponent (phase-space scaling) */
++    int m_i = 2; /* gauge coupling exponent if applicable */
++    double S = pow(c_eff / c0, n_i) * pow(gw_ratio, m_i);
++    return Gamma_std * S;
++}
+@@
+ /* Replace calls to Gamma_weak_standard(T) for n<->p rates with Gamma_weak_modified(T,a,gamma_param) */
+*** End Patch
+*** Begin Patch
+*** Modify File: alterbbn/network.c
+@@
+ /* After network integration finishes, print UDVT diagnostics */
+-double Yp = compute_He4_mass_fraction();
++double Yp = compute_He4_mass_fraction();
++double T_freeze = detect_freezeout_temperature(); /* implement detection if not present */
++printf("# UDVT_DIAG: Yp = %.6e  T_freeze = %.6e  beta_early = %.6e\n",
++       Yp, T_freeze, udvt_beta_early);
+*** End Patch
+*** Begin Patch
+*** Add File: alterbbn/udvt_params.h
++/* udvt params for AlterBBN */
++#ifndef UDVTPARAMS_H
++#define UDVTPARAMS_H
++extern double udvt_beta_early;
++extern double udvt_beta_late;
++extern double udvt_a_c;
++extern double udvt_delta_a;
++extern int    udvt_enable;
++extern double udvt_gamma_gw;
++#endif
+*** End Patch
+*** Begin Patch
+*** Modify File: alterbbn/Makefile
+@@
+ # add udvt header to include path if needed
++INCLUDES += -I.
+*** End Patch
+---
+### Quick application checklist
+- **Create feature branch**: `git checkout -b feature/udvt-dynamic-beta`  
+- **Save patch**: paste the above unified diff into `udvt_patches.diff` and run `git apply udvt_patches.diff`  
+- **Add prototypes**: ensure `include/background.h` and `alterbbn/udvt_params.h` are included where needed.  
+- **Expose parameters**: map `udvt.enable_dynamic_c` and other params from input files into the C globals (parse in input reader).  
+- **Build**: `make` (or project build command).  
+- **Run unit tests**: run the CI preflight (provided earlier) and small quick runs.  
+- **Validate**: run AlterBBN single run and CLASS quick run to check outputs and `# UDVT_DIAG` lines.
+---
+ line numbers and minimal invasive edits.  
+2. **Python stability module** script and pytest unit tests (ready to drop into `tools/`).  
+3. **Cobaya YAML** complete file and example parameter files.  
+4. **CI preflight script** and `pytest` unit test templates.  
+5. **Dockerfile skeleton** and README template.
+
